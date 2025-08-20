@@ -59,7 +59,7 @@
       let buttonLock = false;
 
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("/Scene.json", {
+        fetch("Scene.json", {
           method: "GET",
         })
           .then((response) => response.json())
