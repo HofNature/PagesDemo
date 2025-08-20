@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子教材样例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        .content-section {
+            background-color: #fff;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3em;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .iframe-container.fixed-size {
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .iframe-container.fixed-size iframe {
+            width: 810px;
+            height: 620px;
+            position: absolute;
+            top: 0;
+        }
+
+        .figure-caption {
+            text-align: center;
+            /* font-style: italic; */
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .description {
+            padding: 20px;
+            background-color: #f9f9f9;
+            /* margin: 20px 0; */
+            border-left: 4px solid #3498db;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .iframe-container {
+                height: 300px;
+            }
+        }
+        /* 响应式缩放 */
+        @media (max-width: 900px) {
+            .iframe-container.fixed-size iframe {
+                transform: scale(0.9);
+                transform-origin: top center;
+            }
+            .iframe-container.fixed-size {
+                height: 540px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .iframe-container.fixed-size iframe {
+                transform: scale(0.8);
+                transform-origin: top center;
+            }
+            .iframe-container.fixed-size {
+                height: 480px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .iframe-container.fixed-size iframe {
+                transform: scale(0.7);
+                transform-origin: top center;
+            }
+            .iframe-container.fixed-size {
+                height: 420px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .iframe-container.fixed-size iframe {
+                transform: scale(0.5);
+                transform-origin: top center;
+            }
+            
+            .iframe-container.fixed-size {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .iframe-container.fixed-size iframe {
+                transform: scale(0.4);
+                transform-origin: top center;
+            }
+            
+            .iframe-container.fixed-size {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>电子教材</h1>
+            <div class="subtitle">交互式学习内容演示</div>
+        </header>
+
+        <div class="content-section">
+            <div class="section-title">深空转移演示</div>
+            <div class="description">
+                <p>在此交互式动画中，我们将展示航天器从地球出发，通过借力飞行飞往木星的过程。点击“播放”按钮可以开始动画，动画将演示轨道转移的具体过程。用户可将鼠标悬浮至航天器上方，查看当前时刻的详细信息。该演示有助于理解借力飞行的原理及其在实际航天任务中的应用。</p>
+            </div>
+            <div class="iframe-container fixed-size">
+                <iframe src="Transfer.html" title="传输演示"></iframe>
+            </div>
+            <div class="figure-caption">图1：深空借力飞行演示</div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-title">北斗卫星系统演示</div>
+            <div class="description">
+                <p>北斗卫星导航系统是中国自主研发的全球卫星导航系统，为全球用户提供高精度、高可靠的定位、导航和授时服务。本演示展示了北斗卫星系统的轨道分布，您可拖动时间轴查看卫星的运动，也可在右上角切换不同的视图模式。</p>
+            </div>
+            <div class="iframe-container">
+                <iframe src="Beidou.html" title="北斗卫星系统演示"></iframe>
+            </div>
+            <div class="figure-caption">图2：北斗卫星系统运行原理演示</div>
+        </div>
+
+        <div class="footer">
+            <p>感谢您访问本页面</p>
+        </div>
+    </div>
+</body>
+</html>
