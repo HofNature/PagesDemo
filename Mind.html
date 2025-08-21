@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞行动力学基础 - 知识图谱</title>
+    <!-- 引入jsMind样式 -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsmind@0.4.6/style/jsmind.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        #knowledge-mindmap {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="knowledge-mindmap"></div>
+
+    <!-- 引入jsMind库 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jsmind@0.4.6/js/jsmind.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jsmind@0.4.6/js/jsmind.draggable.js"></script>
+    <script>
+        // 将知识图谱节点转换为jsMind格式
+        function convertToJsMindFormat(nodes, parentId = null, level = 1) {
+            const result = [];
+            
+            nodes.forEach((node, index) => {
+                const nodeId = parentId ? `${parentId}_${index}` : `root_${index}`;
+                const mindNode = {
+                    id: nodeId,
+                    topic: node.nodeName,
+                    level: level
+                };
+                
+                if (node.children && node.children.length > 0) {
+                    mindNode.children = convertToJsMindFormat(node.children, nodeId, level + 1);
+                }
+                
+                result.push(mindNode);
+            });
+            
+            return result;
+        }
+        
+        // 基础颜色数组，用于一级节点（较深的颜色）
+        const baseColors = [
+            '#D32F2F', // 深红色
+            '#00796B', // 深蓝绿色
+            '#1976D2', // 深蓝色
+            '#388E3C', // 深绿色
+            '#F57C00', // 深橙色
+            '#7B1FA2', // 深紫色
+            '#303F9F', // 深靛蓝色
+            '#C2185B', // 深粉红色
+            '#5D4037', // 深棕色
+            '#37474F'  // 深灰色
+        ];
+        
+        // 调整颜色亮度的函数
+        function lightenColor(color, percent) {
+            const num = parseInt(color.replace("#", ""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) + amt;
+            const G = (num >> 8 & 0x00FF) + amt;
+            const B = (num & 0x0000FF) + amt;
+            
+            return "#" + (
+                0x1000000 +
+                (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255)
+            ).toString(16).slice(1);
+        }
+        
+        // 计算颜色亮度判断深浅
+        function getColorBrightness(hexColor) {
+            const r = parseInt(hexColor.substr(1, 2), 16);
+            const g = parseInt(hexColor.substr(3, 2), 16);
+            const b = parseInt(hexColor.substr(5, 2), 16);
+            // 使用W3C推荐的亮度计算公式
+            return (r * 299 + g * 587 + b * 114) / 1000;
+        }
+        
+        // 根据背景色选择文字颜色
+        function getTextColor(backgroundColor) {
+            return getColorBrightness(backgroundColor) > 192 ? '#000000' : '#FFFFFF';
+        }
+        
+        // 为节点设置颜色的函数
+        function setNodeColors(jm, node, baseColor, level) {
+            // 设置当前节点颜色
+            const lightenedColor = level === 1 ? baseColor : lightenColor(baseColor, (level - 1) * 8); // 减慢减淡速度
+            const textColor = getTextColor(lightenedColor);
+            jm.set_node_color(node.id, lightenedColor, textColor); // 背景色和自动选择的文字颜色
+            
+            // 递归设置子节点颜色
+            if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                    setNodeColors(jm, child, baseColor, level + 1);
+                });
+            }
+        }
+        
+        // 初始化思维导图
+        function initMindMap() {
+            // 加载知识图谱数据
+            fetch('cleaned_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const nodeList = data.data.nodeList;
+                    
+                    // 转换为jsMind格式
+                    const mindData = convertToJsMindFormat(nodeList);
+                    
+                    // 创建一个虚拟的根节点来包含所有顶级节点
+                    const rootNode = {
+                        id: 'root',
+                        topic: '飞行动力学基础',
+                        children: mindData,
+                        level: 0
+                    };
+                    
+                    // 准备jsMind数据
+                    const mind = {
+                        meta: {
+                            name: '飞行动力学基础',
+                            author: 'Knowledge Graph',
+                            version: '1.0'
+                        },
+                        format: 'node_tree',
+                        data: rootNode
+                    };
+                    
+                    // 配置jsMind
+                    const options = {
+                        container: 'knowledge-mindmap',
+                        editable: true,
+                        theme: 'primary',
+                        view: {
+                            engine: 'canvas',
+                            hmargin: 100,
+                            vmargin: 50,
+                            line_width: 2,
+                            line_color: '#555'
+                        }
+                    };
+                    
+                    // 创建jsMind实例
+                    const jm = new jsMind(options);
+                    
+                    // 显示思维导图
+                    jm.show(mind);
+                    
+                    // 为节点设置颜色
+                    if (rootNode.children && rootNode.children.length > 0) {
+                        rootNode.children.forEach((child, index) => {
+                            // 为每个一级节点分配不同的基础颜色
+                            const baseColor = baseColors[index % baseColors.length];
+                            setNodeColors(jm, child, baseColor, 1);
+                        });
+                    }
+                    jm.disable_edit();
+                })
+                .catch(error => {
+                    console.error('Error loading knowledge graph:', error);
+                    document.getElementById('knowledge-mindmap').innerHTML = '<p>加载知识图谱时出错。</p>';
+                });
+        }
+        
+        // 页面加载完成后初始化思维导图
+        window.addEventListener('DOMContentLoaded', initMindMap);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1690 @@
+{
+  "code": 200,
+  "message": "OK",
+  "data": {
+    "map": {
+      "mapName": "飞行动力学基础",
+      "mapDesc": "“飞行动力学基础”课程是面向我校飞行器设计与工程专业三年级本科生开设的一门核心专业课，是学生系统学习飞行动力学理论与方法的开端，课程设置为32学时，内容既涵盖理论力学、材料力学、空气动力学等基础课程的关键知识点和力学分析方法，还引入当前航天飞行器设计中的关键动力学问题，以前沿科学和工程应用为背景开展教学。\n本课程主要研究航天器力学分析中的三大基础问题，空间与时间变换部分建立了描述航天器运动的时间尺度标准和空间计量方式；牛顿第二定律以传统力学的方式建立起了以能量角度描述看待航天器作为质点运动的方法；动量矩定理增加了从动量角度描述看待航天器作为刚体姿态运动的方法。"
+    },
+    "nodeList": [
+      {
+        "nodeUid": "1843599644219805696",
+        "nodeName": "绪论",
+        "children": [
+          {
+            "nodeUid": "1843599644328857600",
+            "nodeName": "课程概述",
+            "children": [
+              {
+                "nodeUid": "1843599644425326592",
+                "nodeName": "课程内容与目标",
+                "children": []
+              },
+              {
+                "nodeUid": "1843599644517601280",
+                "nodeName": "课程资源",
+                "children": []
+              },
+              {
+                "nodeUid": "1843599644609875968",
+                "nodeName": "飞行器空天交会运动虚拟仿真实验",
+                "children": []
+              },
+              {
+                "nodeUid": "1844228788444073984",
+                "nodeName": "课后知识和能力拓展",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843599644702150656",
+            "nodeName": "课程内容与特点",
+            "children": [
+              {
+                "nodeUid": "1843599644827979776",
+                "nodeName": "课程主要内容",
+                "children": []
+              },
+              {
+                "nodeUid": "1843599644920254464",
+                "nodeName": "课程特点及结构安排",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1843599645012529152",
+        "nodeName": "矢量与坐标变换",
+        "children": [
+          {
+            "nodeUid": "1843599645104803840",
+            "nodeName": "矢量",
+            "children": [
+              {
+                "nodeUid": "1843599645197078528",
+                "nodeName": "矢量与矢量的分量列阵",
+                "children": []
+              },
+              {
+                "nodeUid": "1843599645289353216",
+                "nodeName": "矢量的点乘积与叉乘积",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843599645381627904",
+            "nodeName": "坐标变换与欧拉转动定理",
+            "children": [
+              {
+                "nodeUid": "1843599645469708288",
+                "nodeName": "坐标变换",
+                "children": [
+                  {
+                    "nodeUid": "1843599645561982976",
+                    "nodeName": "为什么要强调坐标变换？",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843599645654257664",
+                    "nodeName": "坐标变换应用案例",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843599645746532352",
+                "nodeName": "基元旋转",
+                "children": []
+              },
+              {
+                "nodeUid": "1843599645834612736",
+                "nodeName": "一般坐标变换",
+                "children": [
+                  {
+                    "nodeUid": "1843599645939470336",
+                    "nodeName": "若用待求角的正切函数代替正弦函数和余弦函数，那么可以抵消掉 cosθ 项，从而求解第一次和第三次转动角吗？",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843599646212100096",
+                    "nodeName": "用给定顺序基元旋转实现坐标变换，会出现奇异问题。可否找出一种方法，不存在奇异？",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843599646124019712",
+                "nodeName": "欧拉转动定理",
+                "children": [
+                  {
+                    "nodeUid": "1843599646304374784",
+                    "nodeName": "坐标变换矩阵与转轴和转角的关系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843599646396649472",
+                    "nodeName": "分析案例",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843599646484729856",
+            "nodeName": "运动系中的矢量导数",
+            "children": [
+              {
+                "nodeUid": "1843599646577004544",
+                "nodeName": "运动坐标系中矢量导数的描述方法",
+                "children": [
+                  {
+                    "nodeUid": "1843599646669279232",
+                    "nodeName": "明确坐标系时，分量列阵可表示矢量。矢量的导数仍为矢量，如何表示为分量列阵？",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843599646757359616",
+                    "nodeName": "练习",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843599646849634304",
+            "nodeName": "四元数理论",
+            "children": [
+              {
+                "nodeUid": "1843599646937714688",
+                "nodeName": "四元数的定义和性质",
+                "children": [
+                  {
+                    "nodeUid": "1843599647029989376",
+                    "nodeName": "四元数的背景",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843599647122264064",
+                    "nodeName": "四元数的定义及运算规则",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843599647214538752",
+                    "nodeName": "四元数乘法",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843599647311007744",
+                    "nodeName": "四元数性质",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843599647399088128",
+                "nodeName": "四元数旋转变换",
+                "children": []
+              },
+              {
+                "nodeUid": "1843599647491362816",
+                "nodeName": "多次四元数旋转变换的合成",
+                "children": []
+              },
+              {
+                "nodeUid": "1843599647583637504",
+                "nodeName": "四元数运动学方程",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1843963305836810240",
+        "nodeName": "质点系的动力学方程",
+        "children": [
+          {
+            "nodeUid": "1857718439423119360",
+            "nodeName": "质点系的运动方程",
+            "children": [
+              {
+                "nodeUid": "1843963305945862144",
+                "nodeName": "惯性矩阵",
+                "children": [
+                  {
+                    "nodeUid": "1843963306038136832",
+                    "nodeName": "背景",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963306126217216",
+                    "nodeName": "刚体运动",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963306218491904",
+                "nodeName": "惯量椭球和惯量主轴",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1844224266783035392",
+            "nodeName": "刚体的运动方程",
+            "children": [
+              {
+                "nodeUid": "1843963306310766592",
+                "nodeName": "刚体的动量矩和动能",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963306403041280",
+                "nodeName": "刚体的动力学方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963306491121664",
+                "nodeName": "自由刚体的运动特性",
+                "children": [
+                  {
+                    "nodeUid": "1843963306591784960",
+                    "nodeName": "结论",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963306679865344",
+                "nodeName": "一般刚体的自由转动",
+                "children": [
+                  {
+                    "nodeUid": "1843963306767945728",
+                    "nodeName": "结论",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963306860220416",
+                "nodeName": "本体极迹的分布规律",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843963306948300800",
+            "nodeName": "质点相对运动的动力学方程",
+            "children": []
+          }
+        ]
+      },
+      {
+        "nodeUid": "1843963307036381184",
+        "nodeName": "分析力学基础",
+        "children": [
+          {
+            "nodeUid": "1843963307128655872",
+            "nodeName": "分析力学综述",
+            "children": [
+              {
+                "nodeUid": "1843963307212541952",
+                "nodeName": "从矢量力学到分析力学",
+                "children": [
+                  {
+                    "nodeUid": "1843963307304816640",
+                    "nodeName": "概述",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963307392897024",
+                    "nodeName": "矢量力学与分析力学对比",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963307480977408",
+                "nodeName": "分析力学的发展",
+                "children": [
+                  {
+                    "nodeUid": "1843963307569057792",
+                    "nodeName": "分析力学的起源",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963307657138176",
+                    "nodeName": "近代分析力学",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963307745218560",
+                    "nodeName": "中国分析力学",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843963307833298944",
+            "nodeName": "动力学方程",
+            "children": [
+              {
+                "nodeUid": "1843963307921379328",
+                "nodeName": "动力学普遍方程",
+                "children": [
+                  {
+                    "nodeUid": "1843963308013654016",
+                    "nodeName": "基本概念",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963308101734400",
+                    "nodeName": "动力学普遍方程表达式",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963308189814784",
+                "nodeName": "拉格朗日方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963308277895168",
+                "nodeName": "罗斯方程",
+                "children": [
+                  {
+                    "nodeUid": "1843963308365975552",
+                    "nodeName": "小结",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843963308454055936",
+            "nodeName": "拟拉格朗日方程及其求解",
+            "children": [
+              {
+                "nodeUid": "1843963308550524928",
+                "nodeName": "准坐标与准速度",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963308659576832",
+                "nodeName": "拟拉格朗日方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963308747657216",
+                "nodeName": "拟拉格朗日方程求解",
+                "children": [
+                  {
+                    "nodeUid": "1843963308860903424",
+                    "nodeName": "实例",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843963308948983808",
+            "nodeName": "哈密顿正则方程与正则变换",
+            "children": [
+              {
+                "nodeUid": "1843963309037064192",
+                "nodeName": "哈密顿正则方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963309129338880",
+                "nodeName": "哈密顿正则方程建立",
+                "children": [
+                  {
+                    "nodeUid": "1843963309225807872",
+                    "nodeName": "案例",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963309318082560",
+                "nodeName": "正则变换",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843963309406162944",
+            "nodeName": "凯恩方程及其求解",
+            "children": [
+              {
+                "nodeUid": "1843963309498437632",
+                "nodeName": "凯恩方程",
+                "children": [
+                  {
+                    "nodeUid": "1843963309586518016",
+                    "nodeName": "理论力学相关内容回顾",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963309674598400",
+                    "nodeName": "分析",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963309762678784",
+                    "nodeName": "虚功率原理",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963309859147776",
+                    "nodeName": "广义速度、偏速度、偏角速度",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963309947228160",
+                "nodeName": "广义主动力和广义惯性力",
+                "children": [
+                  {
+                    "nodeUid": "1843963310039502848",
+                    "nodeName": "广义主动力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963310127583232",
+                    "nodeName": "广义惯性力",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1843963310219857920",
+                "nodeName": "凯恩方程求解",
+                "children": [
+                  {
+                    "nodeUid": "1843963310307938304",
+                    "nodeName": "实例",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1843963310396018688",
+                    "nodeName": "总结",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1843963310479904768",
+        "nodeName": "空间运动几何与时间",
+        "children": [
+          {
+            "nodeUid": "1843963310576373760",
+            "nodeName": "地球运动与时间系统",
+            "children": [
+              {
+                "nodeUid": "1843963310677037056",
+                "nodeName": "时空观",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963310765117440",
+                "nodeName": "物理时空观",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963310853197824",
+                "nodeName": "传统时空观",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963310970638336",
+                "nodeName": "地球的运动",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963311058718720",
+                "nodeName": "时间系统",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1843963311142604800",
+            "nodeName": "坐标系与地球模型",
+            "children": [
+              {
+                "nodeUid": "1843963311230685184",
+                "nodeName": "相关坐标系",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963311318765568",
+                "nodeName": "地球模型",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963311411040256",
+                "nodeName": "引力势",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963311494926336",
+                "nodeName": "引力加速度",
+                "children": []
+              },
+              {
+                "nodeUid": "1843963311595589632",
+                "nodeName": "其它影响因素",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1854814797242175488",
+        "nodeName": "有翼导弹的运动方程",
+        "children": [
+          {
+            "nodeUid": "1854814797359616000",
+            "nodeName": "导弹概述",
+            "children": [
+              {
+                "nodeUid": "1854814797439307776",
+                "nodeName": "导弹与有翼导弹",
+                "children": [
+                  {
+                    "nodeUid": "1854814797518999552",
+                    "nodeName": "导弹简介",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814797598691328",
+                    "nodeName": "导弹的运动",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814797678383104",
+                    "nodeName": "中国空军历史上最远距离战略运输任务",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814797758074880",
+                    "nodeName": "有翼导弹简介",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814797837766656",
+                "nodeName": "有翼导弹举例",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814797938429952",
+                "nodeName": "科创项目举例",
+                "children": [
+                  {
+                    "nodeUid": "1854814798018121728",
+                    "nodeName": "北航冯如杯科技竞赛",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814798097813504",
+            "nodeName": "坐标系和运动变量",
+            "children": [
+              {
+                "nodeUid": "1854814798177505280",
+                "nodeName": "坐标系和运动变量的定义",
+                "children": [
+                  {
+                    "nodeUid": "1854814798341083136",
+                    "nodeName": "地面坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814798420774912",
+                    "nodeName": "本体坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814798500466688",
+                    "nodeName": "气流速度坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814798584352768",
+                    "nodeName": "航迹速度坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814798668238848",
+                    "nodeName": "弹道坐标系",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814798752124928",
+                "nodeName": "各坐标系之间的综合关系",
+                "children": [
+                  {
+                    "nodeUid": "1854814798836011008",
+                    "nodeName": "从地面坐标系到本体坐标系的转换",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814798915702784",
+                    "nodeName": "从气流速度坐标系到本体坐标系的转换",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814798999588864",
+                    "nodeName": "从地面坐标系到弹道坐标系的转换",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814799087669248",
+                    "nodeName": "从弹道坐标系到航迹速度坐标系的转换",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814799167361024",
+            "nodeName": "作用力和力矩",
+            "children": [
+              {
+                "nodeUid": "1854814799247052800",
+                "nodeName": "作用在导弹上的力和力矩",
+                "children": [
+                  {
+                    "nodeUid": "1854814799326744576",
+                    "nodeName": "重力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814799419019264",
+                    "nodeName": "推力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814799502905344",
+                    "nodeName": "空气动力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814799595180032",
+                    "nodeName": "重心与质心的关系",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814799674871808",
+            "nodeName": "导弹运动动力学方程",
+            "children": [
+              {
+                "nodeUid": "1854814799758757888",
+                "nodeName": "导弹质心运动的动力学方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814799842643968",
+                    "nodeName": "动力学方程的一般投影形式",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814799926530048",
+                    "nodeName": "在地面坐标系中的运动方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814800006221824",
+                    "nodeName": "在本体坐标系中的运动方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814800085913600",
+                    "nodeName": "在航迹（弹道）坐标系中的运动方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814800169799680",
+                    "nodeName": "例题",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814800257880064",
+                "nodeName": "导弹绕质心转动的动力学方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814800341766144",
+                    "nodeName": "惯性积",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814800421457920",
+            "nodeName": "有翼导弹的运动模型",
+            "children": [
+              {
+                "nodeUid": "1860990891502735360",
+                "nodeName": "导弹质心运动的运动学方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1860990990777716736",
+                "nodeName": "导弹绕质心转动的运动学方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814800501149696",
+                "nodeName": "导弹质量方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814800580841472",
+                    "nodeName": "变质量质系",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814800668921856",
+                "nodeName": "导弹其它方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814800748613632",
+                "nodeName": "导弹质心运动动力学方程的分析、求解流程",
+                "children": [
+                  {
+                    "nodeUid": "1854814800832499712",
+                    "nodeName": "有关有翼导弹运动方程组的说明",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1854814800916385792",
+        "nodeName": "滚转导弹的运动方程",
+        "children": [
+          {
+            "nodeUid": "1854814800996077568",
+            "nodeName": "滚转导弹简介",
+            "children": [
+              {
+                "nodeUid": "1854814801151266816",
+                "nodeName": "滚转导弹介绍",
+                "children": [
+                  {
+                    "nodeUid": "1854814801243541504",
+                    "nodeName": "滚转导弹的分类",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814801327427584",
+                    "nodeName": "小型滚转导弹的特点",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814801411313664",
+                    "nodeName": "滚转弹道导弹的特点",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814801486811136",
+                    "nodeName": "两种滚转导弹异同点",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814801570697216",
+                    "nodeName": "滚转导弹与有翼导弹的相同点",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814801650388992",
+                    "nodeName": "滚转导弹与有翼导弹的不同点",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814801730080768",
+            "nodeName": "滚转导弹的坐标系",
+            "children": [
+              {
+                "nodeUid": "1854814801805578240",
+                "nodeName": "滚转导弹坐标系定义",
+                "children": [
+                  {
+                    "nodeUid": "1854814801889464320",
+                    "nodeName": "准弹体坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814801981739008",
+                    "nodeName": "准气流速度坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814802074013696",
+                    "nodeName": "准航迹速度坐标系",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814802153705472",
+                "nodeName": "滚转导弹坐标系之间关系",
+                "children": [
+                  {
+                    "nodeUid": "1854814802229202944",
+                    "nodeName": "地面坐标系与准弹体坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814802308894720",
+                    "nodeName": "准弹体坐标系与准气流速度坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814802388586496",
+                    "nodeName": "弹道坐标系与准航迹速度坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814802468278272",
+                    "nodeName": "弹体坐标系与准弹体坐标系",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814802543775744",
+                "nodeName": "滚转导弹的运动参数",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814802698964992",
+            "nodeName": "滚转导弹的作用力和力矩",
+            "children": [
+              {
+                "nodeUid": "1854814802778656768",
+                "nodeName": "滚转导弹与有翼导弹相同的力",
+                "children": [
+                  {
+                    "nodeUid": "1854814802854154240",
+                    "nodeName": "重力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814802933846016",
+                    "nodeName": "推力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814803013537792",
+                    "nodeName": "操纵力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814803093229568",
+                    "nodeName": "空气动力",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814803172921344",
+                "nodeName": "马格努斯力定义与特性",
+                "children": [
+                  {
+                    "nodeUid": "1854814803248418816",
+                    "nodeName": "“香蕉球”的原因",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814803328110592",
+                    "nodeName": "马格努斯力成因",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814803407802368",
+                    "nodeName": "马格努斯效应",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814803483299840",
+                    "nodeName": "马格努斯力矩",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814803558797312",
+            "nodeName": "滚转导弹的运动方程及求解流程",
+            "children": [
+              {
+                "nodeUid": "1854814803638489088",
+                "nodeName": "滚转导弹的运动方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814803726569472",
+                    "nodeName": "质心运动动力学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814803806261248",
+                    "nodeName": "绕质心转动动力学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814803881758720",
+                    "nodeName": "运动学方程",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814803961450496",
+                "nodeName": "滚转导弹运动方程的求解流程",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1854814804036947968",
+        "nodeName": "运载火箭(弹道导弹)的运动方程",
+        "children": [
+          {
+            "nodeUid": "1854814804116639744",
+            "nodeName": "运载火箭(弹道导弹)简介",
+            "children": [
+              {
+                "nodeUid": "1854814804204720128",
+                "nodeName": "弹道导弹与有翼导弹的主要区别",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814804284411904",
+                "nodeName": "运载火箭和弹道导弹的运动阶段",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814804364103680",
+            "nodeName": "中国的运载火箭和弹道导弹",
+            "children": []
+          },
+          {
+            "nodeUid": "1854814804447989760",
+            "nodeName": "运载火箭坐标系定义与所受的力",
+            "children": [
+              {
+                "nodeUid": "1854814804531875840",
+                "nodeName": "运载火箭坐标系与运动变量的定义",
+                "children": [
+                  {
+                    "nodeUid": "1854814804699648000",
+                    "nodeName": "坐标系之间的关系",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814804779339776",
+                "nodeName": "作用在火箭上的力和力矩",
+                "children": [
+                  {
+                    "nodeUid": "1854814804859031552",
+                    "nodeName": "地球引力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814804938723328",
+                    "nodeName": "推力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814805026803712",
+                    "nodeName": "空气动力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814805106495488",
+                    "nodeName": "思考与讨论",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814805186187264",
+            "nodeName": "运载火箭(弹道导弹)的运动方程",
+            "children": [
+              {
+                "nodeUid": "1854814805265879040",
+                "nodeName": "运载火箭质心运动方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814805345570816",
+                    "nodeName": "运动方程的矢量形式",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814805425262592",
+                    "nodeName": "运动方程的分量形式",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814805509148672",
+                "nodeName": "运载火箭姿态运动方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814805597229056",
+                    "nodeName": "姿态动力学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814805672726528",
+                    "nodeName": "运动学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814805760806912",
+                    "nodeName": "其他方程",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814805836304384",
+                "nodeName": "运载火箭再入段运动方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814805915996160",
+                    "nodeName": "再入地面坐标系",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814805991493632",
+                    "nodeName": "再入段质心运动方程",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1854814806071185408",
+        "nodeName": "中心引力运动",
+        "children": [
+          {
+            "nodeUid": "1854814806146682880",
+            "nodeName": "中心引力运动方程",
+            "children": [
+              {
+                "nodeUid": "1854814806230568960",
+                "nodeName": "中心引力运动方程建立",
+                "children": [
+                  {
+                    "nodeUid": "1865323067031556096",
+                    "nodeName": "引力",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814806381563904",
+                    "nodeName": "人造地球卫星的飞行环境",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814806461255680",
+                    "nodeName": "中心引力运动",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814806561918976",
+                "nodeName": "中心引力运动方程求解",
+                "children": [
+                  {
+                    "nodeUid": "1865323213358239744",
+                    "nodeName": "角动量守恒式",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865323250641408000",
+                    "nodeName": "能量守恒式",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865323278919405568",
+                    "nodeName": "中心引力作用下的平面运动方程",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814806717108224",
+            "nodeName": "开普勒轨道及其描述",
+            "children": [
+              {
+                "nodeUid": "1854814806796800000",
+                "nodeName": "速度分布",
+                "children": [
+                  {
+                    "nodeUid": "1865323492640165888",
+                    "nodeName": "最大最小速度推导",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814806951989248",
+                "nodeName": "轨道能量与周期",
+                "children": [
+                  {
+                    "nodeUid": "1865323592816922624",
+                    "nodeName": "开普勒第二定律",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865323615327752192",
+                    "nodeName": "开普勒第三定律",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814807031681024",
+                "nodeName": "轨道的时间历程",
+                "children": [
+                  {
+                    "nodeUid": "1865323719325519872",
+                    "nodeName": "真近点角与时间的关系式",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814807350448128",
+                    "nodeName": "偏近点角与真近点角的关系式",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814807191064576",
+                    "nodeName": "开普勒方程及求解",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865323898275500032",
+                    "nodeName": "偏近点角与真近点角的常用关系式",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814807430139904",
+                    "nodeName": "计算轨道运动时间历程的步骤",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814807589523456",
+            "nodeName": "中心引力运动实例",
+            "children": [
+              {
+                "nodeUid": "1854814807665020928",
+                "nodeName": "星际天体的运动",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814807774072832",
+                "nodeName": "彗星绕恒星的运动",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814807853764608",
+                "nodeName": "卫星绕行星的运动",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814807941844992",
+                "nodeName": "弹道导弹自由飞行段",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1854814808025731072",
+        "nodeName": "人造地球卫星的运动方程",
+        "children": [
+          {
+            "nodeUid": "1854814808105422848",
+            "nodeName": "卫星基本运动与二体问题",
+            "children": [
+              {
+                "nodeUid": "1854814808197697536",
+                "nodeName": "卫星运动的基本概念",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814808277389312",
+                "nodeName": "二体问题定义与描述",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814808361275392",
+                "nodeName": "二体问题动力学方程",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814808440967168",
+                "nodeName": "二体问题的分析与结论",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814808529047552",
+            "nodeName": "Kepler轨道",
+            "children": [
+              {
+                "nodeUid": "1865324227377369088",
+                "nodeName": "Kepler轨道描述",
+                "children": [
+                  {
+                    "nodeUid": "1854814808604545024",
+                    "nodeName": "Kepler轨道的定义",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865324348244627456",
+                    "nodeName": "Kepler轨道的轨道要素",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814808684236800",
+                    "nodeName": "两行轨道根数",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814808759734272",
+                    "nodeName": "Kepler轨道的坐标系定义",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814808843620352",
+                    "nodeName": "Kepler轨道根数计算",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814808923312128",
+                "nodeName": "用正则方程研究Kepler轨道",
+                "children": [
+                  {
+                    "nodeUid": "1854814808998809600",
+                    "nodeName": "卫星运动的球坐标表示",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814809074307072",
+                    "nodeName": "拉格朗日函数和哈密顿函数",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814809153998848",
+                    "nodeName": "哈密顿方程的建立",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814809229496320",
+                    "nodeName": "哈密顿-雅可比方程的建立",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814809304993792",
+                    "nodeName": "哈密顿-雅可比方程的求解",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814809384685568",
+            "nodeName": "轨道摄动",
+            "children": [
+              {
+                "nodeUid": "1854814809464377344",
+                "nodeName": "轨道摄动概述",
+                "children": [
+                  {
+                    "nodeUid": "1854814809539874816",
+                    "nodeName": "轨道摄动的基本概念",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814809619566592",
+                    "nodeName": "地球非中心引力摄动加速度",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814809695064064",
+                    "nodeName": "大气阻力引起的摄动加速度",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814809774755840",
+                    "nodeName": "其它天体引力引起的摄动加速度",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814809854447616",
+                "nodeName": "轨道摄动运动方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814809942528000",
+                    "nodeName": "摄动运动的特点和描述方法",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814810018025472",
+                    "nodeName": "常数变易法",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814810097717248",
+                    "nodeName": "用常数变易法建立摄动方程",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814810173214720",
+            "nodeName": "卫星的姿态运动方程",
+            "children": [
+              {
+                "nodeUid": "1854814810252906496",
+                "nodeName": "卫星姿态的定义",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814810328403968",
+                "nodeName": "刚体卫星的姿态运动方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814810420678656",
+                    "nodeName": "刚体卫星姿态动力学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814810496176128",
+                    "nodeName": "刚体卫星姿态运动学方程",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814810575867904",
+                "nodeName": "卫星的外力矩分析",
+                "children": [
+                  {
+                    "nodeUid": "1865324864588615680",
+                    "nodeName": "控制力矩",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865324879683915776",
+                    "nodeName": "引力梯度力矩及计算",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814810886246400",
+                "nodeName": "刚体+飞轮卫星的姿态运动方程建立",
+                "children": [
+                  {
+                    "nodeUid": "1854814810961743872",
+                    "nodeName": "卫星-飞轮组合体姿态控制原理",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865325041068150784",
+                    "nodeName": "利用动量矩定理建立卫星-飞轮组合体姿态动力学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865325075549523968",
+                    "nodeName": "卫星-三正交飞轮组合体姿态动力学方程建立",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1865325101600346112",
+                    "nodeName": "卫星-三正交一斜装飞轮组合体姿态动力学方程建立",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814811431505920",
+                "nodeName": "刚体+控制力矩陀螺卫星的姿态运动方程",
+                "children": [
+                  {
+                    "nodeUid": "1854814811511197696",
+                    "nodeName": "刚体-力矩陀螺组合体姿态控制原理",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814811586695168",
+                    "nodeName": "刚体+单框架力矩陀螺动力学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814811666386944",
+                    "nodeName": "刚体+双框架力矩陀螺动力学方程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814811741884416",
+                    "nodeName": "工程案例",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814811817381888",
+                    "nodeName": "总结",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1854814811897073664",
+        "nodeName": "深空探测航天器的动力学方程",
+        "children": [
+          {
+            "nodeUid": "1854814811976765440",
+            "nodeName": "深空探测任务与三体问题",
+            "children": [
+              {
+                "nodeUid": "1854814812115177472",
+                "nodeName": "N体问题",
+                "children": [
+                  {
+                    "nodeUid": "1854814812194869248",
+                    "nodeName": "深空探测任务的特点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814812278755328",
+                "nodeName": "三体问题",
+                "children": [
+                  {
+                    "nodeUid": "1854814812354252800",
+                    "nodeName": "三体问题的数学模型（系统方程）",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814812433944576",
+                    "nodeName": "三体问题的解",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814812513636352",
+            "nodeName": "限制性三体问题",
+            "children": [
+              {
+                "nodeUid": "1854814812597522432",
+                "nodeName": "二体问题的解",
+                "children": [
+                  {
+                    "nodeUid": "1854814812681408512",
+                    "nodeName": "限制性三体问题的定义",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814812761100288",
+                "nodeName": "圆型限制性三体问题",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814812836597760",
+                "nodeName": "椭圆型限制性三体问题",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814812920483840",
+            "nodeName": "圆型限制性三体问题的首次积分与平动点",
+            "children": [
+              {
+                "nodeUid": "1854814813000175616",
+                "nodeName": "圆型限制性三体问题的首次积分",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814813079867392",
+                "nodeName": "圆型限制性三体问题的平动点",
+                "children": [
+                  {
+                    "nodeUid": "1854814813159559168",
+                    "nodeName": "朱尔·亨利·庞加莱：探寻三体平衡之美，从拉格朗日点看科学精神与人类探索的力量",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814813239250944",
+                "nodeName": "中国的深空探测任务",
+                "children": [
+                  {
+                    "nodeUid": "1854814813318942720",
+                    "nodeName": "深空探测的历史进程",
+                    "children": []
+                  },
+                  {
+                    "nodeUid": "1854814813398634496",
+                    "nodeName": "“嫦娥二号”任务",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeUid": "1854814813478326272",
+        "nodeName": "航天器近距离相对运动方程",
+        "children": [
+          {
+            "nodeUid": "1854814813558018048",
+            "nodeName": "航天器近距离相对运动",
+            "children": []
+          },
+          {
+            "nodeUid": "1854814813637709824",
+            "nodeName": "相对运动描述",
+            "children": [
+              {
+                "nodeUid": "1854814813721595904",
+                "nodeName": "坐标变换",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814813801287680",
+                "nodeName": "相对运动方程推导",
+                "children": []
+              }
+            ]
+          },
+          {
+            "nodeUid": "1854814813880979456",
+            "nodeName": "相对运动动力学方程化简",
+            "children": [
+              {
+                "nodeUid": "1854814813960671232",
+                "nodeName": "相对运动方程特点",
+                "children": []
+              },
+              {
+                "nodeUid": "1854814814036168704",
+                "nodeName": "C-W方程推导",
+                "children": [
+                  {
+                    "nodeUid": "1854814814115860480",
+                    "nodeName": "C-W方程的解",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "nodeUid": "1854814814195552256",
+                "nodeName": "T-H方程推导",
+                "children": [
+                  {
+                    "nodeUid": "1854814814271049728",
+                    "nodeName": "Hill方程",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
