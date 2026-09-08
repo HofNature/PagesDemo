@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RL · OOS</title>
+    <style>
+        /* ===== 全局重置 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: transparent;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* ===== 2×2 网格 ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 100vw;
+            height: 100vh;
+            gap: 6px;
+            padding: 6px;
+            background: transparent;
+        }
+
+        /* ===== 每个格子 ===== */
+        .cell {
+            position: relative;
+            background: #16213e11;
+            border-radius: 12px;
+            overflow: hidden;
+            /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); */
+            /* 确保 iframe 不会溢出圆角 */
+            /* -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black); */
+        }
+
+        /* ===== iframe 居中 + 缩放 ===== */
+        .cell iframe {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-origin: center center;
+            border: none;
+            background: transparent;
+            /* 默认宽高由 JS 动态设置，这里只是占位 */
+            width: 0;
+            height: 0;
+        }
+
+        /* ===== 角落信息标签 ===== */
+        .cell .info {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 6px 14px;
+            background: #0001;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            letter-spacing: 0.3px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 10;
+            border: 2px solid #0009;
+            /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); */
+            /* font-variant-numeric: tabular-nums; */
+        }
+        .cell .info .label {
+            opacity: 0.7;
+            font-weight: 400;
+        }
+        .cell .info .value {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* ===== 左上角编号 ===== */
+        .cell .badge {
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 16px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            letter-spacing: 0.5px;
+            display: none; /* 默认隐藏，JS 可根据需要显示 */
+        }
+
+        /* ===== 内容加载中的占位 ===== */
+        .cell .placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 16px;
+            letter-spacing: 2px;
+            z-index: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* ===== 响应式：小屏幕时调整间距 ===== */
+        @media (max-width: 600px) {
+            .grid {
+                gap: 4px;
+                padding: 4px;
+            }
+            .cell .info {
+                font-size: 11px;
+                padding: 4px 10px;
+                bottom: 8px;
+                right: 10px;
+            }
+            .cell .badge {
+                font-size: 12px;
+                padding: 3px 10px;
+                top: 8px;
+                left: 10px;
+            }
+        }
+
+        /* ===== 自定义滚动条（仅限 info 不干扰） ===== */
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid" id="grid">
+        <!-- ===== 格子 1 ===== -->
+        <div class="cell" id="cell-0">
+            <div class="badge">①</div>
+            <div class="placeholder">Loading…</div>
+            <iframe id="iframe-0" src="about:blank"></iframe>
+            <div class="info" id="info-0">
+                <span class="value">Flyby task</span>
+            </div>
+        </div>
+
+        <!-- ===== 格子 2 ===== -->
+        <div class="cell" id="cell-1">
+            <div class="badge">②</div>
+            <div class="placeholder">Loading…</div>
+            <iframe id="iframe-1" src="about:blank"></iframe>
+            <div class="info" id="info-1">
+                <span class="value">Fly-around task</span>
+            </div>
+        </div>
+
+        <!-- ===== 格子 3 ===== -->
+        <div class="cell" id="cell-2">
+            <div class="badge">③</div>
+            <div class="placeholder">Loading…</div>
+            <iframe id="iframe-2" src="about:blank"></iframe>
+            <div class="info" id="info-2">
+                <span class="value">Rendezvous task</span>
+            </div>
+        </div>
+
+        <!-- ===== 格子 4 ===== -->
+        <div class="cell" id="cell-3">
+            <div class="badge">④</div>
+            <div class="placeholder">Loading…</div>
+            <iframe id="iframe-3" src="about:blank"></iframe>
+            <div class="info" id="info-3">
+                <span class="value">Multi-target OOS</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ================================================================
+        //  🎯 配置区 —— 修改这里以嵌入您自己的内容
+        // ================================================================
+
+        // 每个 iframe 的配置：src（页面地址）, width（内容宽度）, height（内容高度）
+        // 注意：width 和 height 是您页面内容的「原始尺寸」，单位 px
+        const iframeConfigs = [{
+            src: "Figures/flyby.html",
+            width: 768+16,
+            height: 482+16,
+        }, {
+            src: "Figures/fly-around.html",
+            width: 768+16,
+            height: 482+16,
+        }, {
+            src: "Figures/rendezvous.html",
+            width: 768+16,
+            height: 482+16,
+        }, {
+            src: "Figures/oos.html",
+            width: 768+16,
+            height: 482+16,
+        }, ];
+
+        // ================================================================
+        //  以下为核心逻辑，一般无需修改
+        // ================================================================
+
+        const cells = document.querySelectorAll('.cell');
+        const iframes = document.querySelectorAll('.cell iframe');
+
+        // 缓存配置，方便后续读取
+        const configs = iframeConfigs.map((cfg, idx) => {
+            const iframe = iframes[idx];
+            // 设置 iframe 的 src
+            iframe.src = cfg.src;
+            // 设置 iframe 的宽高为内容原始尺寸
+            iframe.width = cfg.width;
+            iframe.height = cfg.height;
+            return {
+                ...cfg,
+                iframe,
+                cell: cells[idx],
+            };
+        });
+
+        iframes.forEach((iframe, idx) => {
+            iframe.addEventListener('load', () => {
+                // 在iframe中执行点击播放按钮的操作，确保动画自动播放
+                iframe.contentWindow.document.querySelectorAll('.fa.fa-play').forEach((el) => {
+                    if (el.classList.length ==2) {
+                        el.click();
+                    }
+                });
+            });
+        });
+
+        /**
+         * 更新所有 iframe 的缩放
+         */
+        function updateScales() {
+            // 使用 requestAnimationFrame 批量更新，避免频繁回流
+            requestAnimationFrame(() => {
+                configs.forEach((cfg) => {
+                    const cellRect = cfg.cell.getBoundingClientRect();
+                    const cellW = cellRect.width;
+                    const cellH = cellRect.height;
+                    const contentW = cfg.width;
+                    const contentH = cfg.height;
+
+                    // 计算缩放比例：取最小值，使内容完全放入容器
+                    // 至少一边占满，另一边居中（由 translate(-50%, -50%) 实现）
+                    const scaleX = cellW / contentW;
+                    const scaleY = cellH / contentH;
+                    const scale = Math.min(scaleX, scaleY);
+
+                    // 应用缩放
+                    const iframe = cfg.iframe;
+                    // 先确保 iframe 尺寸为原始内容尺寸
+                    iframe.style.width = contentW + 'px';
+                    iframe.style.height = contentH + 'px';
+                    // 通过 transform 缩放并居中
+                    iframe.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                });
+            });
+        }
+
+        // ===== 初始化 =====
+
+        // 首次更新
+        updateScales();
+
+        // 窗口尺寸变化时重新计算
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            if (resizeTimer) {
+                cancelAnimationFrame(resizeTimer);
+            }
+            resizeTimer = requestAnimationFrame(() => {
+                updateScales();
+                resizeTimer = null;
+            });
+        });
+
+        // 也监听 iframe 加载完成（可能有内容尺寸变化，但这里固定尺寸，无需额外处理）
+        // 但为了稳健，在 load 后重新计算一次
+        window.addEventListener('load', () => {
+            setTimeout(updateScales, 100);
+        });
+
+        // 对于某些浏览器，ResizeObserver 更精准，但这里用 resize 事件已足够
+        // 额外使用 ResizeObserver 监控每个 cell 尺寸变化（可选）
+        if (window.ResizeObserver) {
+            const ro = new ResizeObserver(() => updateScales());
+            cells.forEach(cell => ro.observe(cell));
+        }
+
+        // 暴露配置到全局，方便调试
+        window.__iframeConfigs = configs;
+    </script>
+
+</body>
+</html>
