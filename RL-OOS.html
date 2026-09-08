@@ -61,21 +61,22 @@
         /* ===== 角落信息标签 ===== */
         .cell .info {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            padding: 6px 14px;
+            /* 尺寸与右下边距随页面缩放（基准 1920×1080，小屏时收缩，下限保证可读性） */
+            bottom: clamp(6px, 1.85vh, 20px);
+            right: clamp(6px, 1.04vw, 20px);
+            padding: clamp(2px, 0.56vh, 6px) clamp(5px, 0.73vw, 14px);
             background: #0001;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: #000;
-            font-size: 16px;
+            font-size: clamp(10px, 0.83vw, 16px);
             font-weight: 500;
-            border-radius: 8px;
+            border-radius: clamp(4px, 0.42vw, 8px);
             letter-spacing: 0.3px;
             pointer-events: none;
             user-select: none;
             z-index: 10;
-            border: 2px solid #0009;
+            border: clamp(1px, 0.11vw, 2px) solid #0009;
             /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); */
             /* font-variant-numeric: tabular-nums; */
         }
@@ -129,12 +130,6 @@
             .grid {
                 gap: 4px;
                 padding: 4px;
-            }
-            .cell .info {
-                font-size: 11px;
-                padding: 4px 10px;
-                bottom: 8px;
-                right: 10px;
             }
             .cell .badge {
                 font-size: 12px;
@@ -245,11 +240,13 @@
         iframes.forEach((iframe, idx) => {
             iframe.addEventListener('load', () => {
                 // 在iframe中执行点击播放按钮的操作，确保动画自动播放
-                iframe.contentWindow.document.querySelectorAll('.fa.fa-play').forEach((el) => {
-                    if (el.classList.length ==2) {
-                        el.click();
-                    }
-                });
+                setTimeout(() => {
+                    iframe.contentWindow.document.querySelectorAll('.fa.fa-play').forEach((el) => {
+                        if (el.classList.length ==2) {
+                            el.click();
+                        }
+                    });
+                }, 0);
             });
         });
 
